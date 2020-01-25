@@ -1,0 +1,61 @@
+basic_backages:
+  - terminator
+  - python3.8
+  - python3.8-dev
+  - python3.8-venv
+  - audacity
+  - python3-transmissionrpc
+  - transmission-cli
+  - qemu-kvm
+  - gnome-tweaks
+  - libvirt-daemon
+  - libvirt-dev
+  - virt-manager
+  - virtinst
+  - screen
+  - wget
+  - python3-requests
+  - python3-libvirt
+  - wireshark
+  - wireshark-gtk
+  - ffmpeg
+  - qemu
+  - qemu-utils
+  - qemu-user
+  - qemu-kvm
+  - youtube-dl
+  - htop
+  - wireshark
+  - wireshark-gtk
+  - adb
+  - virtualenv
+  - wireguard
+  - wireguard-dkms
+  - wireguard-tools
+  - ubuntu-restricted-extras
+  - openvpn
+  - network-manager-openvpn-gnome
+  - network-manager-openvpn
+  - steam
+  - steamcmd
+  - zim
+  - flatpak
+  - gnome-software-plugin-flatpak
+  - chromium-browser
+snap_packages:
+  - spotify
+  - vlc
+  - vidcutter
+  - obs-studio
+snap_classics:
+  - pycharm-professional
+  - skype
+  - aws-cli
+  - powershell
+  - code
+pip_packages:
+  - requests
+  - boto3
+  - pyinstaller
+flatpak_packages:
+  - com.vinszent.GnomeTwitch
