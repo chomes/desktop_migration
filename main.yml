@@ -20,6 +20,11 @@
         name: "{{ basic_backages }}"
         state: latest
         update_cache: yes
+    - name: Add the Gnome flatpak remote to the system installation
+      flatpak_remote:
+        name: gnome
+        state: present
+        flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
     - name: Install PDF editor
       apt:
         deb: https://code-industry.net/public/master-pdf-editor-5.4.38-qt5-all.amd64.deb
@@ -40,4 +45,9 @@
         name: "{{ snap_classics }}"
         state: present
         classic: yes
+    - name: Install gnome-twitch
+      flatpak:
+        name: com.vinszent.GnomeTwitch
+        state: present
+        remote: gnome
 
