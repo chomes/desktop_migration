@@ -40,7 +40,4 @@
         name: "{{ snap_classics }}"
         state: present
         classic: yes
-    - name: Install gnome twitch
-      flatpak:
-        name: "{{ flatpak_packages }}"
-        state: present
+

@@ -1,3 +1,4 @@
+---
 basic_backages:
   - terminator
   - python3.8
@@ -28,6 +29,7 @@ basic_backages:
   - wireshark
   - wireshark-gtk
   - adb
+  - net-tools
   - virtualenv
   - wireguard
   - wireguard-dkms
@@ -37,7 +39,6 @@ basic_backages:
   - network-manager-openvpn-gnome
   - network-manager-openvpn
   - steam
-  - steamcmd
   - zim
   - flatpak
   - gnome-software-plugin-flatpak
