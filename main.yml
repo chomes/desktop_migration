@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: localhost
   connection: local
   remote_user: james
   gather_facts: yes
@@ -8,6 +8,15 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: Install nodejs apt key
+      apt_key:
+        id: 9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280
+        url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+        state: present
+    - name: Add nodejs repo
+      template:
+        src: nodejs.j2
+        dest: /etc/apt/sources.list.d/nodesource.list
     - name: Update cache and upgrade
       apt:
         update_cache: yes
@@ -25,29 +34,33 @@
         name: gnome
         state: present
         flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
-    - name: Install PDF editor
+    - name: Install local packages
       apt:
-        deb: https://code-industry.net/public/master-pdf-editor-5.4.38-qt5-all.amd64.deb
-    - name: Install lightworks
+        deb: "files/{{ item }}.deb"
+      with_items:
+      - "{{ local_packages }}"
+    - name: Install Amazon Workspaces
       apt:
-        deb: files/Lightworks-2020.1-Beta-118883.deb
+        deb: https://d3nt0h4h6pmmc4.cloudfront.net/workspacesclient_amd64.deb
+    - name: Create group docker
+      group:
+        name: docker
+        state: present
     - name: Adding user to groups
       user:
         name: "{{ ansible_user }}"
-        groups: dialout, libvirt, kvm
+        groups: dialout, libvirt, kvm, docker
         append: yes
     - name: Install snap packages
       snap:
         name: "{{ snap_packages }}"
         state: present
+    - name: Install typescript
+      npm:
+        name: typescript
+        global: yes
     - name: Install classic snaps
       snap:
         name: "{{ snap_classics }}"
         state: present
         classic: yes
-    - name: Install gnome-twitch
-      flatpak:
-        name: com.vinszent.GnomeTwitch
-        state: present
-        remote: gnome
-

@@ -1,7 +1,6 @@
 ---
 basic_backages:
   - terminator
-  - python3.8
   - python3.8-dev
   - python3.8-venv
   - audacity
@@ -9,13 +8,15 @@ basic_backages:
   - transmission-cli
   - qemu-kvm
   - gnome-tweaks
+  - docker
+  - docker.io
   - libvirt-daemon
   - libvirt-dev
   - virt-manager
   - virtinst
   - screen
   - wget
-  - python3-requests
+  - nodejs
   - python3-libvirt
   - wireshark
   - wireshark-gtk
@@ -24,10 +25,7 @@ basic_backages:
   - qemu-utils
   - qemu-user
   - qemu-kvm
-  - youtube-dl
   - htop
-  - wireshark
-  - wireshark-gtk
   - adb
   - net-tools
   - virtualenv
@@ -39,24 +37,26 @@ basic_backages:
   - network-manager-openvpn-gnome
   - network-manager-openvpn
   - steam
-  - zim
   - flatpak
   - gnome-software-plugin-flatpak
   - chromium-browser
 snap_packages:
   - spotify
   - vlc
-  - vidcutter
+  - losslesscut
   - obs-studio
 snap_classics:
   - pycharm-professional
   - skype
-  - aws-cli
   - powershell
   - code
 pip_packages:
   - requests
+  - youtube-dl
   - boto3
+  - awscli
   - pyinstaller
-flatpak_packages:
-  - com.vinszent.GnomeTwitch
+local_packages:
+  - lightworks_2021.1_r126716
+  - slack-desktop-4.13.0-amd64
+  - discord-0.0.13
